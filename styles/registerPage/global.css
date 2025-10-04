@@ -1,0 +1,25 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* TYPOGRAPHY */
+  --ff-poppins: "Poppins", sans-serif;
+  --ff-montserrat: "Montserrat", sans-serif;
+  --ff-roboto: "Roboto", sans-serif;
+
+  --title: 1.5rem;
+  --text-sm: .625rem;
+  --text-md: .75rem;
+  --text-lg: .875rem;
+
+  /* COLORS */
+  --bg-button: #6366F1;
+  --color-title: #111827;
+  --color-text-field: #6B7280;
+  --color-border: #CACACA;
+}
