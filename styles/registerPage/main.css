@@ -55,7 +55,7 @@ form {
       text-decoration: none;
       font: 700 .875rem/1.25 var(--ff-montserrat);
       color: var(--color-text-field);
-    } 
+    }
 
     & p {
       font: 700 .875rem/1.25 var(--ff-montserrat);
@@ -103,7 +103,7 @@ form {
         align-items: center;
 
         &:hover {
-          scale: 1.5;
+          scale: 1.2;
         }
       }
 
@@ -113,9 +113,13 @@ form {
         border-radius: 50%;
         background-color: #000000;
         cursor: pointer;
-        
+
         display: flex;
         align-items: center;
+
+        &:hover {
+          scale: 1.2;
+        }
       }
     }
   }

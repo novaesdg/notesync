@@ -80,6 +80,10 @@ form {
 
         display: flex;
         align-items: center;
+
+        &:hover {
+          scale: 1.2;
+        }
       }
 
       & .apple-btn {
@@ -90,6 +94,10 @@ form {
 
         display: flex;
         align-items: center;
+
+        &:hover {
+          scale: 1.2;
+        }
       }
     }
   }
