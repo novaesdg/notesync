@@ -54,10 +54,25 @@ form {
     border-radius: 1rem;
     padding: .25rem;
     box-shadow: 0 1px 6px rgba(0, 0, 0, 1);
+    transition: 0.2s ease;
 
     &:hover {
       scale: 1.02;
-      transition: 0.2s ease;
+    }
+  }
+
+  & .links {
+    margin-top: 1rem;
+
+    display: flex;
+    flex-direction: column;
+
+    font: 600 .875rem/1.25 var(--ff-montserrat);
+    color: var(--color-text-field);
+
+    & a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 
@@ -77,12 +92,14 @@ form {
         border-radius: 50%;
         border: 1px solid #000000;
         background-color: transparent;
+        cursor: pointer;
+        transition: 0.2s ease;
 
         display: flex;
         align-items: center;
 
         &:hover {
-          scale: 1.2;
+          scale: 1.05;
         }
       }
 
@@ -91,12 +108,14 @@ form {
         border: none;
         border-radius: 50%;
         background-color: #000000;
+        transition: 0.2s ease;
+        cursor: pointer;
 
         display: flex;
         align-items: center;
 
         &:hover {
-          scale: 1.2;
+          scale: 1.05;
         }
       }
     }
