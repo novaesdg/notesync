@@ -37,8 +37,9 @@
     </div>
   </nav>
 
-  <script src="js/auth.js"></script>
-  <script src="js/tasks.js"></script>
+      <script src="js/config.js"></script>
+      <script src="js/auth.js"></script>
+      <script src="js/tasks.js"></script>
   <script>
     // Função para inicializar a página
     async function initializePage() {
@@ -94,7 +95,7 @@
           throw new Error('Usuário não autenticado');
         }
         
-        const response = await fetch('http://localhost:3000/api/tasks', {
+        const response = await fetch(buildApiUrl('/api/tasks'), {
           headers: {
             'Authorization': `Bearer ${token}`
           }
@@ -247,7 +248,7 @@
     async function changeTaskStatusDirect(taskId, newStatus) {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+        const response = await fetch(buildApiUrl(`/api/tasks/${taskId}`), {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',
@@ -277,7 +278,7 @@
       
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+        const response = await fetch(buildApiUrl(`/api/tasks/${taskId}`), {
           method: 'DELETE',
           headers: {
             'Authorization': `Bearer ${token}`
@@ -343,7 +344,7 @@
       
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`http://localhost:3000/api/tasks/${taskId}`, {
+        const response = await fetch(buildApiUrl(`/api/tasks/${taskId}`), {
           method: 'PUT',
           headers: {
             'Content-Type': 'application/json',

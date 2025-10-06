@@ -33,8 +33,9 @@
         </form>
     </main>
 
-    <script src="js/auth.js"></script>
-    <script src="js/tasks.js"></script>
+        <script src="js/config.js"></script>
+        <script src="js/auth.js"></script>
+        <script src="js/tasks.js"></script>
     <script>
         // Função para criar tarefa diretamente
         async function createTaskDirect(title) {
@@ -44,7 +45,7 @@
                 throw new Error('Usuário não autenticado');
             }
             
-            const response = await fetch('http://localhost:3000/api/tasks', {
+            const response = await fetch(buildApiUrl('/api/tasks'), {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

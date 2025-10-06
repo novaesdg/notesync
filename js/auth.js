@@ -1,5 +1,5 @@
-// Configuração da API
-const API_BASE_URL = 'http://localhost:3000/api';
+// Configuração da API (será definida pelo config.js)
+const API_BASE_URL = (window.API_CONFIG?.BASE_URL || 'http://localhost:3000') + '/api';
 
 // Função para fazer requisições HTTP
 async function makeRequest(url, options = {}) {

@@ -7,8 +7,17 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 
 // Middleware
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://127.0.0.1:3000', 
+  'http://localhost:8080',
+  'http://127.0.0.1:8080',
+  'file://',
+  process.env.FRONTEND_URL
+].filter(Boolean);
+
 app.use(cors({
-  origin: ['http://localhost:3000', 'http://127.0.0.1:3000', 'http://localhost:8080', 'http://127.0.0.1:8080', 'file://'],
+  origin: allowedOrigins,
   credentials: true
 }));
 app.use(express.json());
