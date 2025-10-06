@@ -1,23 +1,14 @@
 {
   "name": "notesync",
   "version": "1.0.0",
-  "description": "",
-  "main": "server-frontend.js",
+  "description": "NoteSync - Sistema de Gerenciamento de Tarefas",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd backend && npm start",
+    "install": "cd backend && npm install",
+    "build": "cd backend && npm install",
+    "dev": "cd backend && npm run dev"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/novaesdg/notesync.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/novaesdg/notesync/issues"
-  },
-  "homepage": "https://github.com/novaesdg/notesync#readme",
-  "dependencies": {
-    "express": "^5.1.0"
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
