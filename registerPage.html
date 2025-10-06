@@ -22,8 +22,8 @@
           <img src="assets/icons/user.svg" alt="Ícone de usuário">
           <input 
           type="text"
-          id="username"
-          name="username"
+          id="nome"
+          name="nome"
           placeholder="Nome de usuário"
           required>
         </div>
@@ -42,8 +42,8 @@
           <img src="assets/icons/padlock.svg" alt="Ícone de usuário">
           <input 
           type="password"
-          id="password"
-          name="password"
+          id="senha"
+          name="senha"
           placeholder="Senha"
           required>
         </div>
@@ -52,8 +52,8 @@
           <img src="assets/icons/padlock.svg" alt="Ícone de usuário">
           <input 
           type="password"
-          id="confirm-password"
-          name="confirm-password"
+          id="confirm-senha"
+          name="confirm-senha"
           placeholder="Confirme a senha"
           required>
         </div>
@@ -74,5 +74,40 @@
       </form>
     </section>
   </main>
+
+  <script src="js/auth.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.querySelector('form');
+      
+      form.addEventListener('submit', async function(e) {
+        e.preventDefault();
+        
+        const nome = document.getElementById('nome').value;
+        const email = document.getElementById('email').value;
+        const senha = document.getElementById('senha').value;
+        const confirmSenha = document.getElementById('confirm-senha').value;
+        
+        try {
+          // Validar dados
+          auth.validateEmail(email);
+          auth.validatePasswords(senha, confirmSenha);
+          
+          // Registrar usuário
+          await auth.registerUser({ nome, email, senha });
+          
+          auth.showSuccess('Usuário registrado com sucesso!');
+          
+          // Redirecionar para página de tarefas após 2 segundos
+          setTimeout(() => {
+            window.location.href = 'todoPage.html';
+          }, 2000);
+          
+        } catch (error) {
+          auth.showError(error.message);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
